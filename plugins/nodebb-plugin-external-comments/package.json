@@ -1,0 +1,15 @@
+{
+    "name": "nodebb-plugin-external-comments",
+    "version": "0.1.0",
+    "description": "NodeBB plugin for external comment threads",
+    "main": "library.js",
+    "keywords": [
+        "nodebb",
+        "plugin",
+        "comments"
+    ],
+    "license": "MIT",
+    "nbbpm": {
+        "compatibility": "^4.0.0"
+    }
+}

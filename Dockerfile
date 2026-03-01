@@ -1,4 +1,4 @@
-FROM node:lts as build
+FROM node:lts AS build
 
 ENV NODE_ENV=production \
     DAEMON=false \
@@ -35,6 +35,10 @@ RUN npm install --omit=dev \
     && rm -rf .npm
     # TODO: generate lockfiles for each package manager
     ## pnpm import \
+
+RUN set eux;\
+    npm install \
+        ./plugins/nodebb-plugin-external-comments
 
 FROM node:lts-slim AS final
 

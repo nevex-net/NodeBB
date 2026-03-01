@@ -1,0 +1,18 @@
+{
+  "id": "nodebb-plugin-external-comments",
+  "name": "External Comments Bridge",
+  "description": "Creates topics from a service user and comments from authenticated NodeBB users.",
+  "url": "",
+  "library": "library.js",
+  "hooks": [
+    { "hook": "static:app.load", "method": "init" },
+    { "hook": "filter:admin.header.build", "method": "addAdminNavigation" }
+  ],
+  "staticDirs": {
+    "static": "public"
+  },
+  "templates": "templates",
+  "acpScripts": [
+    "public/lib/admin.js"
+  ]
+}
