@@ -4,7 +4,7 @@ image:
   repository: ghcr.io/nevex-net/nodebb
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "4.9.0"
+  tag: "4.x"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -70,10 +70,7 @@ nodebb:
     email: "test@example.org"
     password: "admin"
 
-  defaultPlugins:
-    - nodebb-plugin-emoji-apple
-    - nodebb-plugin-sso-oauth2-multiple
-    - nodebb-plugin-external-comments
+  defaultPlugins: []
 
   configYaml:
     bcrypt_rounds: 12

@@ -36,7 +36,14 @@ plugin.init = async ({ router, middleware }) => {
 		wrap(async (req, res) => {
 			const externalId = normalizeExternalId(req.params.externalId);
 			const tid = await getTidByExternalId(externalId);
-			res.json({ exists: !!tid, tid: tid || null });
+			const slug = tid ? await topics.getTopicField(tid, "slug") : null;
+
+			if (!tid) {
+				res.status(404).end();
+				return;
+			}
+
+			res.json({ exists: true, tid, slug: slug || null });
 		}),
 	);
 

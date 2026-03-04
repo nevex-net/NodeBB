@@ -11,7 +11,7 @@ ACP page: `/admin/plugins/external-comments`
 
 ## API
 
-- `GET /api/comments/:externalId` -> `{ exists, tid }`
+- `GET /api/comments/:externalId` -> `{ exists, tid, slug }`
 - `POST /api/comments/:externalId/comment` with `{ content, toPid }`
   - requires logged-in user
   - creates topic from `serviceUid` if needed
@@ -22,7 +22,7 @@ ACP page: `/admin/plugins/external-comments`
 
 Use plugin API only to resolve/create thread by `externalId`, then use NodeBB core API by `tid`:
 
-1. `GET /api/comments/:externalId` -> get `{ exists, tid }`
+1. `GET /api/comments/:externalId` -> get `{ exists, tid, slug }`
 2. Read topic/comments via core read API (e.g. `GET /api/topic/:tid`)
 3. Reply via core write API (`POST /api/v3/topics/:tid`)
 
